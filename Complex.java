@@ -1,7 +1,7 @@
 /**
  * Класс для работы с комлексными числами со свойствами <b>real_part</b> и <b>imag_part</b>.
  * @autor Андрей помошников
- * @version 0.1
+ * @version 0.2
  */
 public class Complex {
     /** Поле действительной части числа */
@@ -59,42 +59,49 @@ public class Complex {
         this(other.real_part, other.imag_part);
     }
     /**
-     * Процедура добавление комплексного числа к текущему объекту класса(имитирует оператор +=)
+     * Цепочечная функция добавление комплексного числа к текущему объекту класса(имитирует оператор +=)
      * @param other - добавляемое комплексное число
+     * @return возвращает текущий объект класса
      */
-    public void add(Complex other)
+    public Complex add(Complex other)
     {
         this.real_part += other.real_part;
         this.imag_part += other.imag_part;
+        return this;
     }
 
     /**
-     * Процедура вычитания комплексного числа из текущего объекта класса(имитирует оператор -=)
+     * Цепочечная функция вычитания комплексного числа из текущего объекта класса(имитирует оператор -=)
      * @param other - вычитаемое комплексное число
+     * @return возвращает текущий объект класса
      */
-    public void sub(Complex other)
+    public Complex sub(Complex other)
     {
         this.real_part -= other.real_part;
         this.imag_part -= other.imag_part;
+        return this;
     }
 
     /**
-     * Процедура умножения текущего объекта класса на комплексное число(имитирует оператор *=)
+     * Цепочечная функция умножения текущего объекта класса на комплексное число(имитирует оператор *=)
      * @param other - множитель
+     * @return возвращает текущий объект класса
      */
-    public void mul(Complex other)
+    public Complex mul(Complex other)
     {
         double temp_real = (this.real_part * other.real_part - this.imag_part * other.imag_part);
-        double temp_imag = (this.real_part * other.imag_part - this.imag_part * other.real_part);
+        double temp_imag = (this.real_part * other.imag_part + this.imag_part * other.real_part);
         this.real_part = temp_real;
         this.imag_part = temp_imag;
+        return this;
     }
 
     /**
-     * Процедура деления текущего объекта класса на комплексное число(имитирует оператор /=)
+     * Цепочечная функция деления текущего объекта класса на комплексное число(имитирует оператор /=)
      * @param other - делитель
+     * @return возвращает текущий объект класса
      */
-    public void div(Complex other)
+    public Complex div(Complex other)
     {
         double del = Math.pow(other.real_part,2) + Math.pow(other.imag_part, 2);
         double temp_real =
@@ -103,6 +110,67 @@ public class Complex {
                 ((this.imag_part * other.real_part) - (this.real_part * other.imag_part)) / del;
         this.real_part = temp_real;
         this.imag_part = temp_imag;
+        return this;
     }
+
+    /**
+     * Функция создания объекта класса {@link Complex} путем суммирования текущего с другим
+     * @param other - добавляемое комплексное число
+     * @return возвращает новый объект класса с заданными параметрами
+     */
+   public Complex plus(Complex other)
+   {
+       return new Complex(this.real_part + other.real_part, this.imag_part + other.imag_part);
+   }
+
+    /**
+     * Функция создания объекта класса {@link Complex} путем вычитания из текущего объекта другого
+     * @param other - вычитаемое комплексное число
+     * @return возвращает новый объект класса с заданными параметрами
+     */
+    public Complex minus(Complex other)
+    {
+        return new Complex(this.real_part - other.real_part, this.imag_part - other.imag_part);
+    }
+
+    /**
+     * Функция создания объекта класса {@link Complex} путем умножения текущего объекта на другой
+     * @param other - множитель
+     * @return возвращает новый объект класса с заданными параметрами
+     */
+    public Complex multiplication(Complex other)
+    {
+        return new Complex(this.real_part * other.real_part - this.imag_part * other.imag_part,
+                this.real_part * other.imag_part + this.imag_part * other.real_part);
+    }
+
+    /**
+     * Функция создания объекта класса {@link Complex} путем деления текущего объекта на другой
+     * @param other - делитель
+     * @return возвращает новый объект класса с заданными параметрами
+     */
+    public Complex division(Complex other)
+    {
+        double del = Math.pow(other.real_part,2) + Math.pow(other.imag_part, 2);
+        return new Complex(((this.real_part * other.real_part) + (this.imag_part * other.imag_part)) / del ,
+                ((this.imag_part * other.real_part) - (this.real_part * other.imag_part)) / del);
+    }
+
+    /**
+     * Функция представления объекта класса {@link Complex} в строковом виде
+     * @return возвращает строковое представление комплексного числа
+     */
+    public String toString()
+    {
+        if (imag_part >=0)
+        {
+            return String.format("Complex number = %.4f + %.4fi",real_part,imag_part);
+        }
+        else
+        {
+            return String.format("Complex number = %.4f - %.4fi",real_part,Math.abs(imag_part));
+        }
+    }
+
 
 }
