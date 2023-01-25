@@ -11,5 +11,6 @@ public class Main {
                 d = new Complex(c);
         System.out.println(((a.add(b).div(c)).mul((b.plus(a)))).sub(d.division(new Complex(5.14799,2.8385))));
         //Complex number = 4,8295 + 3,2473i
+        System.out.println(a.inTrigonometric());
     }
 }

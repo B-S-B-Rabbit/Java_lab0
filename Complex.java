@@ -158,7 +158,7 @@ public class Complex {
 
     /**
      * Функция представления объекта класса {@link Complex} в строковом виде
-     * @return возвращает строковое представление комплексного числа
+     * @return возвращает строковое представление комплексного числа в алгебраической форме(по умолч)
      */
     public String toString()
     {
@@ -172,5 +172,30 @@ public class Complex {
         }
     }
 
+    /**
+     * Функция нахождения модуля комплексного числа
+     * @return возвращает модуль комплексного числа
+     */
+    public double mod()
+    {
+        return Math.sqrt(real_part*real_part + imag_part*imag_part);
+    }
 
+    /**
+     * Функция нахождения аргумента комплексного числа
+     * @return возвращает аргумент комплексного числа
+     */
+    public double arg()
+    {
+        return Math.atan(imag_part/real_part);
+    }
+
+    /**
+     * Функция представления объекта класса {@link Complex} в строковом виде
+     * @return возвращает строковое представление комплексного числа в тригонометрической форме
+     */
+    public String inTrigonometric()
+    {
+        return String.format("Complex number in trigonometric = %.4f * (cos(%.4f) + i*sin(%.4f))", mod(),arg(), arg());
+    }
 }
