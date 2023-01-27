@@ -4,11 +4,11 @@ import java.util.List;
  * Класс для работы с матрицами, поддерживающиЙ элементы типа "комплексное число"(и как следствие тип double) класса
  * {@link Complex} и имеющий свойства <b>row</b> и <b>col</b>
  * @author Андрей помошников
- * @version 0.1
+ * @version 0.2
  */
 public class Matrix {
     /** Поле матрицы */
-    Complex[][] matrix;
+    public Complex[][] matrix;
     /** Поле количества строк матрицы */
     private int row;
     /** Поле количества столбцов матрицы */
@@ -61,14 +61,51 @@ public class Matrix {
     Matrix(Matrix other)
     {
         this(other.row, other.col);
-        for (int i = 0; i<other.row; ++i)
+        for (int i = 0; i < other.row; ++i)
         {
-            if (other.col >= 0)
+            for (int j = 0; j < other.col; ++j)
             {
-                System.arraycopy(other.matrix[i], 0, this.matrix[i], 0, other.col);
+                this.matrix[i][j] = new Complex(other.matrix[i][j]);
             }
         }
 
+    }
+    /**
+     * Функция-геттер для количества строк матрицы
+     * @return возвращает значение количества строк текущего объекта класса
+     */
+    public int getRow()
+    {
+        return row;
+    }
+
+    /**
+     * Функция-геттер для количества столбцов матрицы
+     * @return возвращает значение количества столбцов текущего объекта класса
+     */
+    public int getCol()
+    {
+        return row;
+    }
+    /**
+     * Цепочечная функция добавление матрицы к текущему объекту класса(имитирует оператор +=)
+     * @param other - добавляемая матрица
+     * @return возвращает текущий объект класса
+     */
+    public Matrix add(Matrix other)
+    {
+        if ((this.col == other.col) && (this.row == other.row))
+        {
+            for (int i = 0; i < this.row; ++i)
+            {
+                for (int j = 0; j < this.col; ++j)
+                {
+                    this.matrix[i][j].add(other.matrix[i][j]);
+                }
+            }
+            return this;
+        }
+        return null;
     }
 
     }
