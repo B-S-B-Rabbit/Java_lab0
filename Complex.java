@@ -1,7 +1,7 @@
 /**
  * Класс для работы с комлексными числами со свойствами <b>real_part</b> и <b>imag_part</b>.
- * @autor Андрей помошников
- * @version 0.2
+ * @author Андрей помошников
+ * @version 0.3
  */
 public class Complex {
     /** Поле действительной части числа */
@@ -197,5 +197,39 @@ public class Complex {
     public String inTrigonometric()
     {
         return String.format("Complex number in trigonometric = %.4f * (cos(%.4f) + i*sin(%.4f))", mod(),arg(), arg());
+    }
+
+    /**
+     * Функция-геттер для реальной части комплексного числа
+     * @return возвращает реальную часть текущего объекта класса
+     */
+    public double getReal_part()
+    {
+        return real_part;
+    }
+
+    /**
+     * Функция-геттер для мнимой части комплексного числа
+     * @return возвращает мнимую часть текущего объекта класса
+     */
+    public double getImag_part()
+    {
+        return imag_part;
+    }
+    /**
+     * Процедура-сеттер для реальной части комплексного числа
+     * @param num - новое значение для реальной части теущего объекта класса
+     */
+    public void setReal_part(double num)
+    {
+        real_part = num;
+    }
+    /**
+     * Процедура-сеттер для мнимой части комплексного числа
+     * @param num - новое значение для мнимой части теущего объекта класса
+     */
+    public void setImag_part(double num)
+    {
+        imag_part = num;
     }
 }

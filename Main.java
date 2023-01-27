@@ -4,13 +4,17 @@ public class Main {
     public static void main(String[] args) {
         Complex a = new Complex(),
 
-                b = new Complex(3.7),
+                b = new Complex(144,0.0),
 
-                c = new Complex(2.8, -1.2),
+                c = new Complex(10, 0.0),
 
                 d = new Complex(c);
-        System.out.println(((a.add(b).div(c)).mul((b.plus(a)))).sub(d.division(new Complex(5.14799,2.8385))));
-        //Complex number = 4,8295 + 3,2473i
-        System.out.println(a.inTrigonometric());
+        //System.out.println(b.mul(c));
+        //System.out.println(((a.add(b).div(c)).mul((b.plus(a)))).sub(d.division(new Complex(5.14799,2.8385))));
+        //Complex number = 1440,0000 + 0,0000i
+        //System.out.println(a.inTrigonometric());
+        Matrix matr = new Matrix(4);
+        Matrix nmar = new Matrix(matr);
+
     }
 }
