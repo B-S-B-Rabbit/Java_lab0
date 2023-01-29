@@ -1,7 +1,3 @@
-import java.util.Scanner;
-import java.util.concurrent.CompletionException;
-import java.util.regex.Pattern;
-
 public class Main {
     public static void main(String[] args) {
         Complex a = new Complex(),
@@ -16,8 +12,8 @@ public class Main {
         //Complex number = 1440,0000 + 0,0000i
         //System.out.println(a.inTrigonometric());
         Matrix matr = new Matrix(3,3);
-        FillingMatrix tofill = new FillingMatrix();
-   /*     tofill.fillTheMatrix(matr);
+        ConsoleInput tofill = new ConsoleInput();
+      tofill.fillTheMatrix(matr);
         for (int i = 0; i < 3; ++i)
         {
             for (int j = 0; j < 3; ++j)
@@ -29,11 +25,11 @@ public class Main {
         }
        // Matrix nmar = new Matrix(matr);
         //matr.add(nmar);
-        Matrix matrmul = new Matrix(3,2);
+        Matrix matrmul = new Matrix(2,2);
         tofill.fillTheMatrix(matrmul);
         Matrix after_mul = matr.mul(matrmul);
-*/
-       /* for (int i = 0; i < 3; ++i)
+
+        for (int i = 0; i < 3; ++i)
         {
             for (int j = 0; j < 2; ++j)
             {
@@ -45,7 +41,7 @@ public class Main {
             System.out.println();
         }
         after_mul = after_mul.transponse();
-*/
+
       /*  for (int i = 0; i < 2; ++i)
         {
             for (int j = 0; j < 3; ++j)

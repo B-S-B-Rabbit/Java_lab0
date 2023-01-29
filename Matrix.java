@@ -109,7 +109,11 @@ public class Matrix {
         }
         return null;
     }
-
+    /**
+     * Функция создания объекта класса {@link Matrix} путем суммирования текущего с другим
+     * @param other - добавляемая матрица
+     * @return возвращает новый объект класса с заданными параметрами
+     */
     public Matrix plus(Matrix other)
     {
         if ((this.col == other.col) && (this.row == other.row))
@@ -127,6 +131,12 @@ public class Matrix {
         return null;
     }
 
+    /**
+     * Функция создания объекта класса {@link Matrix} путем их перемножения(столюцы текущей матрицы должны равняться
+     * строкам умножаемой
+     * @param other - множитель
+     * @return возвращает новый объект класса с заданными параметрами/null
+     */
     public Matrix mul(Matrix other)
     {
 
@@ -149,6 +159,10 @@ public class Matrix {
         return null;
     }
 
+    /**
+     * Функция транспонирования объекта класса {@link Matrix}
+     * @return возвращает транспонированную матрицу
+     */
     public Matrix transponse()
     {
         Matrix result = new Matrix(col, row);
@@ -162,6 +176,10 @@ public class Matrix {
         return result;
     }
 
+    /**
+     * Функция нахождения детерминанта объекта класса {@link Matrix}
+     * @return возвращает комплексное число - найденный детерминант/null
+     */
     public Complex determinant()
     {
         Complex result = new Complex();
@@ -183,16 +201,16 @@ public class Matrix {
                     int r = 0;
                     int c = 0;
 
-                    for(int j = 1;j < this.row; ++j)
+                    for(int j = 1; j < this.row; ++j)
                     {
                         for( int k=0; k< this.col; ++k)
                         {
-                            if(k == i)
+                            if (k == i)
                             {
                                 continue;
                             }
-                            tempObj.matrix[r][c] = this.matrix[j][k];
-                            ++c;
+                            tempObj.matrix[r][c++] = this.matrix[j][k];
+
 
                             if(c == this.col - 1)
                             {
@@ -204,8 +222,9 @@ public class Matrix {
                     result.add(this.matrix[0][i].multiplication(new Complex(Math.pow(-1,i))).multiplication(tempObj.determinant()));
                 }
             }
+            return result;
         }
-        return result;
+        return null;
     }
 
 

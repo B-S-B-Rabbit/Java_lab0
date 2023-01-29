@@ -4,12 +4,9 @@ import java.util.Scanner;
  * @author Андрей Помошников
  * @version 0.2.1
  */
-public class FillingMatrix {
+public class ConsoleInput {
     /** Поле-шаблон - регулярное выражение для работы с вводом элементов матрцы */
     private String pattern = "[-]?\\d+[.]?\\d*[+]?[-]?\\d*[.]?\\d*";
-
-    FillingMatrix()
-    {}
 
     /**
      * Функция заполнения матрицы
