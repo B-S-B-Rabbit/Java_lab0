@@ -1,7 +1,7 @@
 /**
  * Класс для работы с комлексными числами со свойствами <b>real_part</b> и <b>imag_part</b>.
- * @author Андрей помошников
- * @version 0.3
+ * @author Андрей Помошников
+ * @version 0.3.1
  */
 public class Complex {
     /** Поле действительной части числа */
@@ -164,11 +164,11 @@ public class Complex {
     {
         if (imag_part >=0)
         {
-            return String.format("Complex number = %.4f + %.4fi",real_part,imag_part);
+            return String.format("(%.4f + %.4fi) ",real_part,imag_part);
         }
         else
         {
-            return String.format("Complex number = %.4f - %.4fi",real_part,Math.abs(imag_part));
+            return String.format("(%.4f - %.4fi) ",real_part,Math.abs(imag_part));
         }
     }
 

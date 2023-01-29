@@ -1,8 +1,8 @@
 import java.util.Scanner;
 /**
  * Класс для работы с матрицами, поддерживающиЙ её поэлементное заполнение пользователем с консоли
- * @author Андрей помошников
- * @version 0.2
+ * @author Андрей Помошников
+ * @version 0.2.1
  */
 public class FillingMatrix {
     /** Поле-шаблон - регулярное выражение для работы с вводом элементов матрцы */
@@ -31,7 +31,6 @@ public class FillingMatrix {
                     needToFill.matrix[i][j] = formatingString((complex_number_str));
                 }
             }
-            in.close();
         }
     }
     /**
