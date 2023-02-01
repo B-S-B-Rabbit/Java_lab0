@@ -160,6 +160,7 @@ public class Complex {
      * Функция представления объекта класса {@link Complex} в строковом виде
      * @return возвращает строковое представление комплексного числа в алгебраической форме(по умолч)
      */
+    @Override
     public String toString()
     {
         if (imag_part >=0)

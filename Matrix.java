@@ -227,7 +227,18 @@ public class Matrix {
         return null;
     }
 
+    public StringBuilder tostring() {
+        StringBuilder array = new StringBuilder();
+        for (int i = 0; i < row; ++i) {
+            for (int j = 0; j < col; ++j) {
 
+                array.append(this.matrix[i][j] + " ");
+
+            }
+            array.append('\n');
+        }
+        return array;
+    }
 
 }
 

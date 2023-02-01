@@ -1,6 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        Complex a = new Complex(),
+
+       /* Complex a = new Complex(),
 
                 b = new Complex(144,0.0),
 
@@ -54,8 +55,10 @@ public class Main {
             System.out.println();
         }
 */
-        Matrix for_determinant = new Matrix(4);
-        tofill.fillTheMatrix(for_determinant);
-        System.out.println(for_determinant.determinant());
+       // Matrix for_determinant = new Matrix(4);
+        //tofill.fillTheMatrix(for_determinant);
+       // System.out.println(for_determinant.determinant());
+        Matrix_Complex_GUI app = new Matrix_Complex_GUI();
+
     }
 }
