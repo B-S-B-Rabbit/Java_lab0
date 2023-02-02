@@ -165,11 +165,11 @@ public class Complex {
     {
         if (imag_part >=0)
         {
-            return String.format("(%.4f + %.4fi) ",real_part,imag_part);
+            return String.format("(%.2f + %.2fi) ",real_part,imag_part);
         }
         else
         {
-            return String.format("(%.4f - %.4fi) ",real_part,Math.abs(imag_part));
+            return String.format("(%.2f - %.2fi) ",real_part,Math.abs(imag_part));
         }
     }
 
