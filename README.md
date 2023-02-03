@@ -262,11 +262,11 @@ ____
 Here's what it looks like
 ----
 Greeting and work window
-![initial](initial.png)
+![initial](images/initial.png)
 ----
 Creating matrices
-![creating](creating.png)
+![creating](images/creating.png)
 ----
 Operations
-![repr](repr.png)
+![repr](images/repr.png)
 ----
