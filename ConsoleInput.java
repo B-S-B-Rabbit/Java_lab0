@@ -1,35 +1,11 @@
 import java.util.Scanner;
 /**
- * Класс для работы с матрицами, поддерживающиЙ её поэлементное заполнение пользователем с консоли
+ * Класс для работы с комплексными числами, поддерживающиЙ возврат отформатированного числа из строки
  * @author Андрей Помошников
- * @version 0.2.1
+ * @version 1.0
  */
 public class ConsoleInput {
-    /** Поле-шаблон - регулярное выражение для работы с вводом элементов матрцы */
-    private String pattern = "[-]?\\d+[.]?\\d*[+]?[-]?\\d*[.]?\\d*";
 
-    /**
-     * Функция заполнения матрицы
-     * @param needToFill - входной объект класса {@link Matrix}
-     */
-    public void fillTheMatrix(Matrix needToFill)
-    {
-        Scanner in = new Scanner(System.in);
-       int row = needToFill.getRow();
-       int col = needToFill.getCol();
-        if (row > 0 && col > 0)
-        {
-            for (int i = 0; i < row; ++i)
-            {
-                for (int j = 0; j < col; ++j)
-                {
-                    String complex_number_str = in.next(pattern);
-                    System.out.println(complex_number_str);
-                    needToFill.matrix[i][j] = formatingString((complex_number_str));
-                }
-            }
-        }
-    }
     /**
      * Функция преобразования строки в комплексное число класса {@link Complex}
      * @param needToFormat - строка, содержащая комплексное выражение

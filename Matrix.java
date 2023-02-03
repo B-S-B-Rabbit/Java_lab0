@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
  * Класс для работы с матрицами, поддерживающиЙ элементы типа "комплексное число"(и как следствие тип double) класса
  * {@link Complex} и имеющий свойства <b>row</b> и <b>col</b>
  * @author Андрей Помошников
- * @version 0.2.1
+ * @version 1.0
  */
 public class Matrix {
     /** Поле матрицы */
@@ -166,11 +166,11 @@ public class Matrix {
     public Matrix transponse()
     {
         Matrix result = new Matrix(col, row);
-        for (int i = 0; i < col; ++i)
+        for (int i = 0; i < row; ++i)
         {
-            for (int j = 0; j < row; ++j)
+            for (int j = 0; j < col; ++j)
             {
-                result.matrix[i][j] = matrix[j][i];
+                result.matrix[j][i] = matrix[i][j];
             }
         }
         return result;
@@ -227,18 +227,7 @@ public class Matrix {
         return null;
     }
 
-    public StringBuilder tostring() {
-        StringBuilder array = new StringBuilder();
-        for (int i = 0; i < row; ++i) {
-            for (int j = 0; j < col; ++j) {
 
-                array.append(this.matrix[i][j] + " ");
-
-            }
-            array.append('\n');
-        }
-        return array;
-    }
 
 }
 

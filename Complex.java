@@ -1,7 +1,7 @@
 /**
  * Класс для работы с комлексными числами со свойствами <b>real_part</b> и <b>imag_part</b>.
  * @author Андрей Помошников
- * @version 0.3.1
+ * @version 1.0
  */
 public class Complex {
     /** Поле действительной части числа */
@@ -156,22 +156,6 @@ public class Complex {
                 ((this.imag_part * other.real_part) - (this.real_part * other.imag_part)) / del);
     }
 
-    /**
-     * Функция представления объекта класса {@link Complex} в строковом виде
-     * @return возвращает строковое представление комплексного числа в алгебраической форме(по умолч)
-     */
-    @Override
-    public String toString()
-    {
-        if (imag_part >=0)
-        {
-            return String.format("(%.2f + %.2fi) ",real_part,imag_part);
-        }
-        else
-        {
-            return String.format("(%.2f - %.2fi) ",real_part,Math.abs(imag_part));
-        }
-    }
 
     /**
      * Функция нахождения модуля комплексного числа

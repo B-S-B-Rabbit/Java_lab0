@@ -6,21 +6,9 @@ the real or complex type, and with the complex numbers themselves.
 ## Table of contents
 
 0. [Main Features](#Main-features)
-1. [Заголовки](#Заголовки)
-2. [Работа с выделением текста](#Работа-с-выделением-текста)
-3. [Использование эмодзи (emoji)](#Использование-эмодзи-emoji)
-4. [Использование цитирования в тексте](#Использование-цитирования-в-тексте)
-5. [Подсветка кода](#Подсветка-кода)
-6. [Списки](#Списки)
-    1. [Маркированный](#Маркированный)
-    2. [Нумерованный](#Нумерованный)
-    3. [Смешанные списки](#Смешанные-списки)
-    4. [Список задач](#Список-задач)
-7. [Ссылки](#Ссылки)
-8. [Вставка изображения](#Вставка-изображения)
-9. [Вставка таблиц](#Вставка-таблиц)
-10. [Диаграмм Mermaid.js](#диаграмм-mermaidjs)
-11. [Дополнения](https://github.com/GnuriaN/format-README/blob/master/Дополнения.md)
+1. [Code Examples Complex Class](#Code-Examples-Complex-Class)
+2. [Images](#Images)
+3. [Дополнения](https://github.com/GnuriaN/format-README/blob/master/Дополнения.md)
 
 ## Main Features
 ____
@@ -118,3 +106,6 @@ public class Complex {
 ```
 ____
 [:arrow_up:Оглавление](#Оглавление)
+____
+
+## Images
